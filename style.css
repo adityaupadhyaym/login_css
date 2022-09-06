@@ -1,0 +1,76 @@
+:root {
+    --outer : 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8 ;
+    --inner : inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8 ;
+    --inner-none : inset 0px 0px 0px #d0d0d0, inset 0px 0px 0px #f8f8f8 ;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+min-height: 100vh;    
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container .forms{
+    background-color: #eeeefb;
+    padding: 30px;
+    box-shadow: 3px 3px 3px #d0d0d0,
+    -3px -3px 3px #f8f8f8;
+}
+.container .forms .inputs {
+    margin: 20px;
+    border-radius: 30px;
+    box-shadow: var(--inner);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+   
+
+
+   
+}
+
+.container .forms .inputs:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 30px;
+    transition: box-shadow 0.3s ease;
+}
+.container .forms .inputs:hover {
+box-shadow: var(--inner-none);
+}
+.container .forms .inputs:hover:before {
+    box-shadow: var(--outer);
+}
+
+.container .forms .inputs input {
+    border: none;
+    /* display: block; */
+    height: 40px;
+    width: 100%;
+    border-radius: 30px;
+    padding-left: 20px;
+    background-color: transparent;
+    color: #000000;
+    
+}
+
+
+button {
+    padding: 7px 15px ;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: var(--outer);
+}
